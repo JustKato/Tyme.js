@@ -1,0 +1,1 @@
+export type monthType = "single" | "double" | "short" | "full"
