@@ -14,5 +14,8 @@
     "format"
   ],
   "author": "Kato Twofold",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/JustKato/Tyme.js"
+  }
 }

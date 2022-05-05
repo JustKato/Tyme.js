@@ -10,7 +10,7 @@ for ( let i = 0; i < 12; i++ ) {
     console.log({
         single: a.getMonth("single"),
         double: a.getMonth("double"),
-        full:   a.getMonth("full"),
+        full:   a.getMonth("long"),
         short:  a.getMonth("short"),
     });
 }

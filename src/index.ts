@@ -1,5 +1,6 @@
+import { dayDictionary } from "./Dictionaries/dateDictionary";
 import { monthDictionary } from "./Dictionaries/monthDictionary";
-import { monthType } from "./Types/formatTypes";
+import { dateType, monthType } from "./Types/formatTypes";
 
 
 
@@ -30,7 +31,7 @@ export default class TymeJS {
      * Get the currently assigned date object
      * @returns The assigned Date object
      */
-    public getDate(): Date {
+    public getDateObject(): Date {
         return this.ts;
     }
 
@@ -53,7 +54,7 @@ export default class TymeJS {
      * Get the current month
      */
     public getMonth(mType: monthType): string {
-
+        // get the index of the current month
         let monthIndex: number = this.ts.getMonth();
 
         if ( mType === "single" ) {
@@ -66,6 +67,27 @@ export default class TymeJS {
             return monthDictionary[monthIndex];
         }
 
+    }
+
+    public getDate(dType: dateType): string {
+
+        if ( dType == "single" ) {
+            // get the index of the current day
+            let currentDate: number = this.ts.getDate();
+            return String(currentDate);
+        } else if ( dType == "double" ) {
+            // get the index of the current day
+            let currentDate: number = this.ts.getDate();
+            return String(currentDate).padStart(2, "0");
+        } else if ( dType == 'dowsingle' ) {
+            return String(this.ts.getDay());
+        } else if ( dType == 'dowdouble' ) {
+            return String(this.ts.getDay()).padStart(2, "0");
+        } else if ( dType == "short") {
+            return String(dayDictionary[this.ts.getDay() - 1]);
+        } else {
+            return String(dayDictionary[this.ts.getDay() - 1]).slice(0, 3);
+        }
     }
 
 }
