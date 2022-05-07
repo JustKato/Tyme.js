@@ -1,4 +1,4 @@
-import TymeJS from "..";
+import TymeJS from "../index";
 
 const a = new TymeJS();
 

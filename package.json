@@ -4,8 +4,9 @@
   "description": "Quickly and easily format JavaScript date Objects",
   "main": "dist/index.js",
   "scripts": {
-    "build": "esbuild src/index.ts --bundle --minify --sourcemap --target=chrome58,firefox57,safari11,edge16 --outfile=dist/tyme.js",
-    "test": "ts-node ./src/tests/fullTest.ts"
+    "build":    "tsc",
+    "buildweb": "esbuild src/index.ts --bundle --minify --sourcemap --target=chrome58,firefox57,safari11,edge16 --outfile=dist/tyme.js",
+    "test":     "jest --config jestconfig.json"
   },
   "keywords": [
     "time",
@@ -20,5 +21,14 @@
   },
   "dependencies": {
     "ts-node": "^10.7.0"
-  }
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.0",
+    "jest": "^28.1.0",
+    "ts-jest": "^28.0.1",
+    "typescript": "^4.6.4"
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
