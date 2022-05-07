@@ -1,6 +1,6 @@
 import { dayDictionary }       from "./Dictionaries/dateDictionary";
 import { monthDictionary }     from "./Dictionaries/monthDictionary";
-import { commonDateFormats, dateType, hourType, isDateType, isHourType, isMeridiemType, isMonthType, isYearType, meridiemType, monthType, yearType } from "./Types/formatTypes";
+import { commonDateFormats, dateType, hourType, isDateType, isHourType, isMeridiemType, isMinuteType, isMonthType, isYearType, meridiemType, minuteType, monthType, yearType } from "./Types/formatTypes";
 
 
 /**
@@ -68,6 +68,8 @@ export default class TymeJS {
                 formattedDate += this.getMeridiem(char);
             else if ( isHourType(char) )
                 formattedDate += this.getHour(char);
+            else if ( isMinuteType(char) )
+                formattedDate += this.getMinutes(char);
             else {
                 // Just append the char to the result
                 formattedDate += char;
@@ -114,6 +116,15 @@ export default class TymeJS {
         }
 
         throw new Error(`Invalid format for Hour ${t}`);
+    }
+
+    public getMinutes(t: minuteType ): string {
+
+        if ( t === "i" ) {
+            return String(this.ts.getMinutes()).padStart(2, "0");
+        }
+
+        throw new Error(`Invalid format for Minute ${t}`);
     }
 
 
