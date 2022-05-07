@@ -27,9 +27,40 @@ Using npm:
 ```shell
 $ npm i tymejs
 ```
-In Node.js:
-```js
 
+In Node.js TypeScript:
+```js
+// Import the Package
+import TymeJS from "tymejs"; // Use require for plain javascript
+
+// Get the date object from Somewhere
+let myDate: Date = new Date();
+
+// Initialize the TymeJS Object
+let t: TymeJS = new TymeJS(myDate);
+
+// Now you can format different dates
+let formattedDate: string = t.format("d/m/Y H:i A");
+
+// Log the formatted Date
+console.log(formattedDate);
+```
+
+In Node.js using JavaScript:
+```js
+const { default: TymeJS } = require("tymejs");
+
+// Get the date object from Somewhere
+let myDate = new Date();
+
+// Initialize the TymeJS Object
+let t = new TymeJS(myDate);
+
+// Now you can format different dates
+let formattedDate = t.format("d/m/Y H:i A");
+
+// Log the formatted Date
+console.log(formattedDate);
 ```
 
 ## Why TymeJS?
