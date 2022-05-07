@@ -6,6 +6,38 @@ export type commonDateFormats = "d/m/Y" | "m/d/Y" | "d/m/Y h:i A" | "d/m/Y H:i" 
 
 // ############################## [ Time Formats ] ##############################
 
+// =-=-=-=-=-=-=-=-=-=-= [ Meridiem ] =-=-=-=-=-=-=-=-=-=-=
+const mertypes = [ "a", "A" ];
+/**
+ * Possible formats for the date
+ */
+export type meridiemType = (typeof mertypes)[number];
+export const isMeridiemType = (x: any): x is meridiemType => mertypes.includes(x);
+
+// =-=-=-=-=-=-=-=-=-=-= [ Hours ] =-=-=-=-=-=-=-=-=-=-=
+const hourtypes = [ "g", "G", "h", "H" ];
+/**
+ * Possible formats for the date
+ */
+export type hourType = (typeof hourtypes)[number];
+export const isHourType = (x: any): x is hourType => hourtypes.includes(x);
+
+// =-=-=-=-=-=-=-=-=-=-= [ Minutes ] =-=-=-=-=-=-=-=-=-=-=
+const minutetypes = [ "g", "G", "h", "H" ];
+/**
+ * Possible formats for the date
+ */
+export type minuteType = (typeof minutetypes)[number];
+export const isMinuteType = (x: any): x is minuteType => minutetypes.includes(x);
+
+// =-=-=-=-=-=-=-=-=-=-= [ Seconds ] =-=-=-=-=-=-=-=-=-=-=
+const secondtypes = [ "g", "G", "h", "H" ];
+/**
+ * Possible formats for the date
+ */
+export type secondType = (typeof secondtypes)[number];
+export const isSecondType = (x: any): x is secondType => secondtypes.includes(x);
+
 
 
 // ############################## [ Date Formats ] ##############################

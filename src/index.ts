@@ -1,6 +1,6 @@
 import { dayDictionary }       from "./Dictionaries/dateDictionary";
 import { monthDictionary }     from "./Dictionaries/monthDictionary";
-import { commonDateFormats, dateType, isDateType, isMonthType, isYearType, monthType, yearType } from "./Types/formatTypes";
+import { commonDateFormats, dateType, isDateType, isMonthType, isYearType, meridiemType, monthType, yearType } from "./Types/formatTypes";
 
 
 /**
@@ -73,6 +73,12 @@ export default class TymeJS {
 
 
     // ############################## [ Time Formats ] ##############################
+
+    public getMeridiem(t: meridiemType): string {
+        
+
+        throw new Error(`Invalid format for meridiem ${t}`);
+    }
 
 
     // ############################## [ Date Formats ] ##############################

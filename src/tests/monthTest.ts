@@ -1,4 +1,4 @@
-import TymeJS from "../src";
+import TymeJS from "..";
 
 for ( let i = 0; i < 12; i++ ) {
 
