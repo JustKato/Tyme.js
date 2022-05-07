@@ -5,6 +5,10 @@ import { commonDateFormats, dateType, hourType, isDateType, isHourType, isMeridi
 
 /**
  * The main Tyme Class, initialize it by optionally passing a date object
+ * Created by Kato Twofold https://justkato.me
+ * @author Kato Twofold
+ * @example new TymeJS().format("d/m/Y h:i A")
+ * @class
  */
 export default class TymeJS {
 
