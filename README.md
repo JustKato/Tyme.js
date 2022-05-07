@@ -12,7 +12,10 @@ $ npm run build
 ```
 
 ## Download
- * [Web build](https://github.com/JustKato/Tyme.js/releases/download/3.0.0/tyme.js-3.0.0.zip.zip)
+
+[![Web Download](https://img.shields.io/badge/Web-Download%20Package-yellow?style=for-the-badge&logo=javascript)](https://github.com/JustKato/Tyme.js/releases/download/3.0.0/tyme.js-3.0.0.zip.zip)
+[![NPM Download](https://img.shields.io/badge/NPM-Download-orange?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/tymejs)
+
 
 Tyme.js is released under the [MIT license](license) & supports modern environments.<br>
 
