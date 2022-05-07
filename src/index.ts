@@ -1,6 +1,6 @@
 import { dayDictionary }       from "./Dictionaries/dateDictionary";
 import { monthDictionary }     from "./Dictionaries/monthDictionary";
-import { commonDateFormats, dateType, monthType, yearType } from "./Types/formatTypes";
+import { commonDateFormats, dateType, isDateType, isMonthType, isYearType, monthType, yearType } from "./Types/formatTypes";
 
 
 /**
@@ -45,7 +45,7 @@ export default class TymeJS {
      * @param dateTimeFormat
      * @returns The date formatted in the provided dateTimeFormat
      */
-    public format(dateTimeFormat: string | commonDateFormats): string {
+    public format(dateTimeFormat: commonDateFormats | string ): string {
         /**
          * The formatted date
          */
@@ -53,7 +53,18 @@ export default class TymeJS {
 
         // Go through all of the characters of the dateTimeFormat string
         for ( let char of Array.from(dateTimeFormat) ) {
-            
+            // Check which one of the formatters can handle this
+            if ( isDateType(char) )
+                formattedDate += this.getDate(char);
+            else if ( isMonthType(char) )
+                formattedDate += this.getMonth(char);
+            else if ( isYearType(char) )
+                formattedDate += this.getYear(char);
+            else {
+                // Just append the char to the result
+                formattedDate += char;
+            }
+
         }
 
         // Return the formatted date

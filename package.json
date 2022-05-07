@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "esbuild src/index.ts --bundle --minify --sourcemap --target=chrome58,firefox57,safari11,edge16 --outfile=dist/tyme.js",
-    "test":  "tsc"
+    "test": "tsc"
   },
   "keywords": [
     "time",
