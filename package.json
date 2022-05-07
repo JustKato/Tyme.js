@@ -1,8 +1,9 @@
 {
   "name": "tymejs",
-  "version": "0.3.2",
+  "version": "0.3.4",
   "description": "Quickly and easily format JavaScript date Objects",
-  "main": "dist/index.js",
+  "main":  "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build":    "tsc",
     "buildweb": "esbuild src/index.ts --bundle --minify --sourcemap --target=chrome58,firefox57,safari11,edge16 --outfile=dist/tyme.js",
