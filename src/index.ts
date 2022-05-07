@@ -1,6 +1,6 @@
 import { dayDictionary }       from "./Dictionaries/dateDictionary";
 import { monthDictionary }     from "./Dictionaries/monthDictionary";
-import { commonDateFormats, dateType, isDateType, isMonthType, isYearType, meridiemType, monthType, yearType } from "./Types/formatTypes";
+import { commonDateFormats, dateType, hourType, isDateType, isHourType, isMeridiemType, isMonthType, isYearType, meridiemType, monthType, yearType } from "./Types/formatTypes";
 
 
 /**
@@ -60,6 +60,10 @@ export default class TymeJS {
                 formattedDate += this.getMonth(char);
             else if ( isYearType(char) )
                 formattedDate += this.getYear(char);
+            else if ( isMeridiemType(char) )
+                formattedDate += this.getMeridiem(char);
+            else if ( isHourType(char) )
+                formattedDate += this.getHour(char);
             else {
                 // Just append the char to the result
                 formattedDate += char;
@@ -75,9 +79,37 @@ export default class TymeJS {
     // ############################## [ Time Formats ] ##############################
 
     public getMeridiem(t: meridiemType): string {
-        
+        // Get the current meridiem
+        let meridiem = ((this.ts.getHours() + 11) % 12 + 1) > 12 ? "pm" : "am";
+        // Check which format to return
+        if ( t === "A" ) {
+            return meridiem.toUpperCase();
+        } else if ( t === "a" ) {
+            return meridiem;
+        }
 
         throw new Error(`Invalid format for meridiem ${t}`);
+    }
+
+    public getHour(t: hourType): string | number {
+        // Get current hour
+        let h = this.ts.getHours();
+
+        if ( t == "G" ) {
+            return h;
+        } else if ( t === "g" ) {
+            if ( h > 12 )
+                return h - 12;
+            return h;
+        } else if ( t === "H" ) {
+            return String(h).padStart(2, "0");
+        } else if ( t === "h" ) {
+            if ( h > 12 )
+                return String(h - 12).padStart(2, "0");
+            return String(h).padStart(2, "0");
+        }
+
+        throw new Error(`Invalid format for Hour ${t}`);
     }
 
 
