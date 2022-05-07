@@ -8,10 +8,10 @@ for ( let i = 0; i < 12; i++ ) {
     const a = new TymeJS(currentMonth);
     
     console.log({
-        single: a.getMonth("single"),
-        double: a.getMonth("double"),
-        full:   a.getMonth("long"),
-        short:  a.getMonth("short"),
+        single: a.getMonth("n"),
+        double: a.getMonth("m"),
+        full:   a.getMonth("F"),
+        short:  a.getMonth("M"),
     });
 }
 

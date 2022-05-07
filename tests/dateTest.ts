@@ -1,18 +1,18 @@
 import TymeJS from "../src";
 
-let startDate: Date = new Date();
+let d: Date = new Date();
 
 for ( let i = 0; i < 7; i++ ) {
-    const a = new TymeJS(startDate);
-    console.log(startDate, {
-        single:    a.getDate("single"),
-        double:    a.getDate("double"),
-        dowsingle: a.getDate("dowsingle"),
-        dowdouble: a.getDate("dowdouble"),
-        full:      a.getDate("long"),
-        short:     a.getDate("short"),
+
+    const a = new TymeJS(d);
+    console.log(d, {
+        single:    a.getDate("j"),
+        double:    a.getDate("d"),
+        dowdouble: a.getDate("w"),
+        full:      a.getDate("l"),
+        short:     a.getDate("D"),
     });
 
-    startDate.setDate(startDate.getDate() + 1);
+    d.setDate(d.getDate() + 1);
 }
 
