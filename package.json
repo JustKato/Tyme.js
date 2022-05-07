@@ -1,11 +1,11 @@
 {
   "name": "tymejs",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Quickly and easily format JavaScript date Objects",
   "main": "dist/index.js",
   "scripts": {
     "build": "esbuild src/index.ts --bundle --minify --sourcemap --target=chrome58,firefox57,safari11,edge16 --outfile=dist/tyme.js",
-    "test": "tsc"
+    "test": "ts-node ./src/tests/fullTest.ts"
   },
   "keywords": [
     "time",
@@ -17,5 +17,8 @@
   "license": "MIT",
   "repository": {
     "url": "https://github.com/JustKato/Tyme.js"
+  },
+  "dependencies": {
+    "ts-node": "^10.7.0"
   }
 }
