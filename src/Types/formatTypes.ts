@@ -35,7 +35,7 @@ const secondtypes = [ "s" ];
 /**
  * Possible formats for the date
  */
-export type secondType = (typeof secondtypes)[number];
+export type secondType = "s";
 export const isSecondType = (x: any): x is secondType => secondtypes.includes(x);
 
 

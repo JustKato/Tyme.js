@@ -1,6 +1,6 @@
 import { dayDictionary }       from "./Dictionaries/dateDictionary";
 import { monthDictionary }     from "./Dictionaries/monthDictionary";
-import { commonDateFormats, dateType, hourType, isDateType, isHourType, isMeridiemType, isMinuteType, isMonthType, isYearType, meridiemType, minuteType, monthType, yearType } from "./Types/formatTypes";
+import { commonDateFormats, dateType, hourType, isDateType, isHourType, isMeridiemType, isMinuteType, isMonthType, isSecondType, isYearType, meridiemType, minuteType, monthType, secondType, yearType } from "./Types/formatTypes";
 
 
 /**
@@ -70,6 +70,8 @@ export default class TymeJS {
                 formattedDate += this.getHour(char);
             else if ( isMinuteType(char) )
                 formattedDate += this.getMinutes(char);
+            else if ( isSecondType(char) )
+                formattedDate += this.getSeconds(char);
             else {
                 // Just append the char to the result
                 formattedDate += char;
@@ -115,7 +117,7 @@ export default class TymeJS {
             return String(h).padStart(2, "0");
         }
 
-        throw new Error(`Invalid format for Hour ${t}`);
+        throw new Error(`Invalid format for Hours ${t}`);
     }
 
     public getMinutes(t: minuteType ): string {
@@ -124,7 +126,15 @@ export default class TymeJS {
             return String(this.ts.getMinutes()).padStart(2, "0");
         }
 
-        throw new Error(`Invalid format for Minute ${t}`);
+        throw new Error(`Invalid format for Minutes ${t}`);
+    }
+
+    public getSeconds(t: secondType) {
+        if ( t === "s" ) {
+            return String(this.ts.getSeconds()).padStart(2, "0");
+        }
+
+        throw new Error(`Invalid format for Seconds ${t}`);
     }
 
 
