@@ -11,8 +11,11 @@
   },
   "keywords": [
     "time",
+    "time format",
     "date",
-    "date",
+    "date format",
+    "datetime",
+    "datetime format",
     "format"
   ],
   "author": "Kato Twofold",
