@@ -31,6 +31,15 @@ Using npm:
 $ npm i tymejs
 ```
 
+## Usage
+
+All of the available formats are directly from [PHP's date formats](https://www.php.net/manual/en/datetime.format.php#refsect1-datetime.format-parameters)
+
+
+#### ⚠ Warning ⚠
+⚠ Not all different character formats have been implemented. ⚠
+
+
 In Node.js TypeScript:
 ```js
 // Import the Package
@@ -44,6 +53,8 @@ let t: TymeJS = new TymeJS(myDate);
 
 // Now you can format different dates
 let formattedDate: string = t.format("d/m/Y H:i A");
+
+// All Available formats: https://www.php.net/manual/en/datetime.format.php#refsect1-datetime.format-parameters
 
 // Log the formatted Date
 console.log(formattedDate);
@@ -61,6 +72,8 @@ let t = new TymeJS(myDate);
 
 // Now you can format different dates
 let formattedDate = t.format("d/m/Y H:i A");
+
+// All Available formats: https://www.php.net/manual/en/datetime.format.php#refsect1-datetime.format-parameters
 
 // Log the formatted Date
 console.log(formattedDate);
