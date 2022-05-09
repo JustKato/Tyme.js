@@ -1,4 +1,4 @@
-# Tyme.js
+![Tyme.JS](./logo.png)
 
 [Site](https://justkato.me/) |
 [Docs/Wiki](https://github.com/JustKato/Tyme.js/wiki) |

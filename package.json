@@ -1,6 +1,6 @@
 {
   "name": "tymejs",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "Quickly and easily format JavaScript date Objects",
   "main":  "lib/index.js",
   "types": "lib/index.d.ts",
